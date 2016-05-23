@@ -150,7 +150,7 @@ class netCreator(object):
 class trainThread(object):
     def __init__(self, num, global_network, initial_lr, environment):
         
-        print "THREAD ", num, "STARTING...", "LEARNING POLICY => INITIAL_LEARNING_RATE:", initial_lr
+        print("THREAD ", num, "STARTING...", "LEARNING POLICY => INITIAL_LEARNING_RATE:", initial_lr)
         
         self.num = num
         
@@ -231,10 +231,10 @@ class trainThread(object):
             s_t = s_t1
             
             if (self.num == 0) and (self.t % 100) == 0:
-                print "P:", pi_, "/ V", v_t, "/ ACTION", a_t
+                print("P:", pi_, "/ V", v_t, "/ ACTION", a_t)
             
             if terminal:
-                print "THREAD:", self.num, "/ TIME", T, "/ TIMESTEP", self.t, "/ SCORE", self.step_score         
+                print("THREAD:", self.num, "/ TIME", T, "/ TIMESTEP", self.t, "/ SCORE", self.step_score)
                 if self.environment == 1:
                     self.step_score = 0
                 elif self.environment == 2:
@@ -304,7 +304,7 @@ coord = tf.train.Coordinator()
 checkpoint = tf.train.get_checkpoint_state(CHECKPOINT_DIR)
 if checkpoint and checkpoint.model_checkpoint_path:
     saver.restore(sess, checkpoint.model_checkpoint_path)
-    print "Successfully loaded:", checkpoint.model_checkpoint_path
+    print("Successfully loaded:", checkpoint.model_checkpoint_path)
 
 if __name__ == "__main__":
     # Start n concurrent actor threads

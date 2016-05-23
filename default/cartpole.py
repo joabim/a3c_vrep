@@ -51,8 +51,8 @@ class CartPole:
             self.discount_factor = 1.
         else:
             if mode != 'easy':
-                print "Error: CartPole does not recognize mode", mode
-                print "Defaulting to 'easy'"
+                print("Error: CartPole does not recognize mode", mode)
+                print("Defaulting to 'easy'")
             self.state_range = numpy.array([[-2.4, 2.4],                                 # Cart location bound
                                             [-6., 6.],                                   # Cart velocity bound
                                             [-numpy.pi * 12./180., numpy.pi * 12./180.], # Pole angle bounds
